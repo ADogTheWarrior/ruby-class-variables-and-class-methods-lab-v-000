@@ -13,22 +13,19 @@ class Song
     @artist = artist
     @genre = genre
     @@count += 1
-
-    #if new, add new thing and put its count at 1, also add it to the array
-    #else += 1 to the count of matching thing
+    @@genres << genre
+    @@artists << artist
 
     if @@genre_count.has_key? genre
       @@genre_count[genre] += 1
     else
       @@genre_count[genre] = 1
-      @@genres << genre
     end
 
     if @@artist_count.has_key? artist
       @@artist_count[artist] += 1
     else
       @@artist_count[artist] = 1
-      @@artists << artist
     end
   end
 
